@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: internal-app
+  namespace: cloud-ingeneering
+spec:
+  selector:
+    matchLabels:
+      app: internal-app
+  template:
+    metadata:
+      labels:
+        app: internal-app
+    spec:
+      containers:
+        - name: internal-app-container
+          image: paketobuildpacks/httpd:0.7
+          ports:
+            - containerPort: 80
+      serviceAccountName: cloud-ingeneering
