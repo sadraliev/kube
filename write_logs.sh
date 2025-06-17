@@ -1,0 +1,1 @@
+kubectl logs pi -n application > pi.log
