@@ -1,1 +1,0 @@
-kubectl logs pi -n application > pi-logs.txt
